@@ -159,17 +159,26 @@ def break_into_list_of_words(string):
     # if blank spaces crept in (they did), let's get rid of them
     while ' ' in list_of_words:
         list_of_words.remove(' ')
+    while '' in list_of_words:
+        list_of_words.remove('')
     # removing a lot of unnecessary punctuation; gives you more options
     # for how to solve this problem
+    # (you'll get a cleaner way to do this, later in the semester, too)
     for index in range(0, len(list_of_words)):
         list_of_words[index] = list_of_words[index].strip(";")
-        # smart quotes will ruin your LIFE
-        list_of_words[index] = list_of_words[index].strip("“")
-        list_of_words[index] = list_of_words[index].strip("”")
+        list_of_words[index] = list_of_words[index].strip("?")
         list_of_words[index] = list_of_words[index].strip(".")
         list_of_words[index] = list_of_words[index].strip(",")
         list_of_words[index] = list_of_words[index].strip("!")
+        # smart quotes will ruin your LIFE
+        list_of_words[index] = list_of_words[index].strip("“")
+        list_of_words[index] = list_of_words[index].strip("”")
         list_of_words[index] = list_of_words[index].strip("’")
+        list_of_words[index] = list_of_words[index].strip("‘")
+
+    # all we have now is a list with words without punctuation
+    # (secretly, some words still have apostrophes and dashes in 'em)
+    # (but we don't care)
     return list_of_words
     # ^^^ YOU DO NOT HAVE TO CHANGE ANYTHING IN HERE ^^^
 
@@ -185,7 +194,9 @@ def main():
     count = 0
     words = break_into_list_of_words(THE_RAVEN)
     # a reasonable first step, to see what you've got:
-    #print(words)
+    # for word in words:
+    #     print(word, end = " ")
+
 
 if __name__ == "__main__":
     main()

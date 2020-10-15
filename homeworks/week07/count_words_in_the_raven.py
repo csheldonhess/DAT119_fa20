@@ -167,14 +167,14 @@ def break_into_list_of_words(string):
     for index in range(0, len(list_of_words)):
         list_of_words[index] = list_of_words[index].strip(";")
         list_of_words[index] = list_of_words[index].strip("?")
-        list_of_words[index] = list_of_words[index].strip(".")
         list_of_words[index] = list_of_words[index].strip(",")
         list_of_words[index] = list_of_words[index].strip("!")
         # smart quotes will ruin your LIFE
         list_of_words[index] = list_of_words[index].strip("“")
         list_of_words[index] = list_of_words[index].strip("”")
-        list_of_words[index] = list_of_words[index].strip("’")
         list_of_words[index] = list_of_words[index].strip("‘")
+        list_of_words[index] = list_of_words[index].strip(".")
+        list_of_words[index] = list_of_words[index].strip("’")
 
     # all we have now is a list with words without punctuation
     # (secretly, some words still have apostrophes and dashes in 'em)

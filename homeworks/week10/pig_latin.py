@@ -23,7 +23,7 @@ def get_text(filename):
 
 
 def main():
-    # get the text from the file
+    # get the text from the file; prejudice is a big, long string
     prejudice = get_text('prejudice.txt')
     
     # prove to ourselves that it worked

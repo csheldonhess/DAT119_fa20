@@ -19,6 +19,7 @@ def get_text(filename):
         # open it, and read its contents
         file_handler = open(filename, 'r')
         the_text = file_handler.read()
+        file_handler.close()
     return the_text
 
 
